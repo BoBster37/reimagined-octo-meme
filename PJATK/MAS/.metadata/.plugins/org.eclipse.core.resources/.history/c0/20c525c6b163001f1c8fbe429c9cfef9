@@ -1,0 +1,30 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Person {
+
+	protected String name;
+	protected String surname;
+	protected String email;
+	protected String password;
+	protected String phoneNumber;
+	protected int pesel; // unique
+	protected String companyName;
+
+	public Person() {
+		addPerson(this);
+	}
+
+	private static List<Person> extent = new ArrayList<>();
+
+	private static void addPerson(Person Person) {
+		extent.add(Person);
+	}
+
+	private static void removePerson(Person Person) {
+		extent.remove(Person);
+	}
+
+}

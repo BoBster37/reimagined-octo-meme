@@ -1,0 +1,27 @@
+package controllers;
+
+import javafx.concurrent.Task;
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import models.Project;
+
+public class TasksController {
+
+    @FXML
+    private ListView<String> tasksListView;
+
+    private Project project;
+
+    public void setProject(Project project) {
+        this.project = project;
+        displayTasks();
+    }
+
+    private void displayTasks() {
+        tasksListView.getItems().clear();
+        for (Task task : project.getTasks()) {
+            tasksListView.getItems().add(task.getName());
+        }
+    }
+}
+

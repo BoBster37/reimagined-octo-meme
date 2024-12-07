@@ -1,0 +1,78 @@
+public class s26160 {
+    public static void main(String[] args) {
+        char[][] tab = {
+            {'S', 'a', 'm', 's', 'u', 'n', 'g'},
+            {'N', 'o', 'k', 'i', 'a'},
+            {'A', 'p', 'p', 'l', 'e'},
+            {'B', 'l', 'a', 'c', 'k', 'B', 'e', 'r', 'r', 'y'},
+            {'A', 'l', 'c', 'a', 't', 'e', 'l'},
+            {'S', 'o', 'n', 'y'},
+            {'J', 'o', 'l', 'l', 'a'}
+        };
+
+        System.out.println("Nazwy spełniające przynajmniej 3 warunki:");
+        for (char[] name : tab) {
+            int conditionsMet = 0;
+
+            // Warunek 1: Przynajmniej dwie takie same litery (bez względu na wielkość)
+            char[] lowerName = new char[name.length];
+            for (int i = 0; i < name.length; i++) {
+                lowerName[i] = Character.toLowerCase(name[i]);
+            }
+            boolean hasDuplicate = false;
+            for (int i = 0; i < lowerName.length; i++) {
+                for (int j = i + 1; j < lowerName.length; j++) {
+                    if (lowerName[i] == lowerName[j]) {
+                        hasDuplicate = true;
+                        break;
+                    }
+                }
+                if (hasDuplicate) break;
+            }
+            if (hasDuplicate) {
+                conditionsMet++;
+            }
+
+            // Warunek 2: Suma wszystkich znaków w słowie jest większa niż 255
+            int sum = 0;
+            for (char c : name) {
+                sum += c;
+            }
+            if (sum > 255) {
+                conditionsMet++;
+            }
+
+            // Warunek 3: Zawiera przynajmniej jeden znak 'i'
+            boolean containsI = false;
+            for (char c : name) {
+                if (Character.toLowerCase(c) == 'i') {
+                    containsI = true;
+                    break;
+                }
+            }
+            if (containsI) {
+                conditionsMet++;
+            }
+
+            // Warunek 4: Zawiera przynajmniej dwa takie same znaki
+            boolean hasExactDuplicate = false;
+            for (int i = 0; i < name.length; i++) {
+                for (int j = i + 1; j < name.length; j++) {
+                    if (name[i] == name[j]) {
+                        hasExactDuplicate = true;
+                        break;
+                    }
+                }
+                if (hasExactDuplicate) break;
+            }
+            if (hasExactDuplicate) {
+                conditionsMet++;
+            }
+
+            // Sprawdzenie, czy spełnia przynajmniej 3 warunki
+            if (conditionsMet >= 3) {
+                System.out.println(String.valueOf(name));
+            }
+        }
+    }
+}

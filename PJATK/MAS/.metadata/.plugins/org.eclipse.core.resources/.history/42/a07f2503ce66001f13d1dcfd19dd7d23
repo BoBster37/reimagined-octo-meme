@@ -1,0 +1,47 @@
+package controllers;
+
+import models.Task;
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import models.Project;
+import java.io.IOException;
+
+public class TasksController {
+
+    @FXML
+    private ListView<String> tasksListView;
+
+    private Project project;
+
+    public void setProject(Project project) {
+        this.project = project;
+        displayTasks();
+    }
+
+    private void displayTasks() {
+        tasksListView.getItems().clear();
+        for (Task task : project.getTasks()) {
+            tasksListView.getItems().add(task.getName() + " - " + task.getDescription());
+        }
+    }
+
+    @FXML
+    private void handleBackButtonAction() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Projects.fxml"));
+            Parent root = loader.load();
+
+            ProjectsController projectsController = loader.getController();
+            projectsController.setManager(project.getManager());
+
+            Stage stage = (Stage) tasksListView.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

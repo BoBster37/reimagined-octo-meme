@@ -1,0 +1,25 @@
+package controllers;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+
+public class TasksController {
+
+    @FXML
+    private ListView<String> tasksListView;
+
+    private Project project;
+
+    public void setProject(Project project) {
+        this.project = project;
+        displayTasks();
+    }
+
+    private void displayTasks() {
+        tasksListView.getItems().clear();
+        for (Task task : project.getTasks()) {
+            tasksListView.getItems().add(task.getName());
+        }
+    }
+}
+

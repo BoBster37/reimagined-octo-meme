@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class s26169 {
+    public static void main(String[] args) {
+    	int x = 2;
+    	System.out.println();
+    	switch(x) {
+    	case 1,2 -> "A";
+    	default -> "B"
+    	}
+
+    }
+}

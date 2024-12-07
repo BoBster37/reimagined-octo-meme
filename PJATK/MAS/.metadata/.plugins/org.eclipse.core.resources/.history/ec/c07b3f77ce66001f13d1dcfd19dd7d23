@@ -1,0 +1,39 @@
+package controllers;
+
+import javafx.fxml.FXML;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import models.Project;
+import models.Task;
+
+public class TasksController {
+
+    @FXML
+    private TilePane tasksTilePane;
+
+    private Project project;
+
+    public void setProject(Project project) {
+        this.project = project;
+        displayTasks();
+    }
+
+    private void displayTasks() {
+        tasksTilePane.getChildren().clear();
+
+        for (Task task : project.getTasks()) {
+            VBox taskBox = new VBox(10);
+            taskBox.setStyle("-fx-border-color: #ddd; -fx-padding: 15; -fx-background-color: #f9f9f9;");
+
+            Text taskName = new Text(task.getName());
+            taskName.setStyle("-fx-font-size: 18; -fx-font-weight: bold;");
+
+            Text taskDetails = new Text(task.getDescription());
+            taskDetails.setWrappingWidth(200);  // Ограничиваем ширину текста
+
+            taskBox.getChildren().addAll(taskName, taskDetails);
+            tasksTilePane.getChildren().add(taskBox);
+        }
+    }
+}

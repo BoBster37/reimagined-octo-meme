@@ -1,0 +1,34 @@
+import java.util.Random;
+
+public class ы26169 {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        int size1 = random.nextInt(5) + 1;
+        int size2 = random.nextInt(5) + 1;
+        int size3 = random.nextInt(5) + 1;
+
+        int[] array1 = new int[size1];
+        int[] array2 = new int[size2];
+        int[] array3 = new int[size3];
+
+        fillArrayWithRandomValues(array1, random);
+        fillArrayWithRandomValues(array2, random);
+        fillArrayWithRandomValues(array3, random);
+
+        int[][] twoDimensionalArray = {array1, array2, array3};
+
+        for (int i = 0; i < twoDimensionalArray.length; i++) {
+            for (int j = 0; j < twoDimensionalArray[i].length; j++) {
+                System.out.print(twoDimensionalArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void fillArrayWithRandomValues(int[] array, Random random) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
+    }
+}

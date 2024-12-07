@@ -1,0 +1,16 @@
+import java.util.Random;
+
+public class s26169 {
+    public static void main(String[] args) {
+    	int x = 2;
+    	
+    	switch(x) {
+    	case 1,2:
+    		System.out.println("A");
+    	break;
+    	default:
+    		System.out.println("B");
+    	}
+
+    }
+}

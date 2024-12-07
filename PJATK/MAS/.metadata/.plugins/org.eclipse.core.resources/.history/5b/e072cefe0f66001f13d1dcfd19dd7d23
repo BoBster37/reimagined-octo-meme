@@ -1,0 +1,58 @@
+package controllers;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+import models.Manager;
+import models.Project;
+import javafx.scene.Scene;
+import javafx.fxml.FXMLLoader;
+import java.io.IOException;
+import javafx.scene.Parent;
+
+public class ProjectsController {
+
+    @FXML
+    private ListView<String> projectsListView;
+
+    private Manager manager;
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+        displayProjects();
+    }
+
+    private void displayProjects() {
+        projectsListView.getItems().clear();
+        for (Project project : manager.getProjects()) {
+            projectsListView.getItems().add(project.getName());
+        }
+    }
+
+    @FXML
+    private void handleViewTasksButtonAction() {
+        String selectedProjectName = projectsListView.getSelectionModel().getSelectedItem();
+        if (selectedProjectName != null) {
+            Project selectedProject = manager.getProjects().stream()
+                    .filter(project -> project.getName().equals(selectedProjectName))
+                    .findFirst().orElse(null);
+            
+            if (selectedProject != null) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Tasks.fxml"));
+                    Parent root = loader.load();
+
+                    // Передаем проект в TasksController
+                    TasksController tasksController = loader.getController();
+                    tasksController.setProject(selectedProject);
+
+                    Stage stage = (Stage) projectsListView.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+

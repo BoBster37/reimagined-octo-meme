@@ -1,0 +1,22 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Contractor {
+
+	public Contractor() {
+		addContractor(this);
+	}
+
+	private static List<Contractor> extent = new ArrayList<>();
+
+	private static void addContractor(Contractor Contractor) {
+		extent.add(Contractor);
+	}
+
+	private static void removeContractor(Contractor Contractor) {
+		extent.remove(Contractor);
+	}
+
+}

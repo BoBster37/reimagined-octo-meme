@@ -1,0 +1,12 @@
+package controllers;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+
+public class TasksController {
+
+    @FXML
+    private ListView<String> tasksListView;
+
+    // Логика для отображения задач здесь
+}

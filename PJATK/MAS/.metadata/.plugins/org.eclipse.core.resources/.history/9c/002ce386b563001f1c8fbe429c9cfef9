@@ -1,0 +1,17 @@
+package Models;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Manager mag1 = new Manager();
+		Manager mag2 = new Manager();
+		Project pr1 = new Project();
+		
+		pr1.setManager(mag1);
+		pr1.setManager(mag2);
+
+		
+	}
+
+}

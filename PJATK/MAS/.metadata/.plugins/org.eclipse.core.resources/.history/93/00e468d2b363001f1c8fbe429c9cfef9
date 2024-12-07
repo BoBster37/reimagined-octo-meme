@@ -1,0 +1,87 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Project {
+
+	private int projectId;
+	private String name;
+	private String description;
+	private String location;
+	// enum
+	private Manager manager;
+	private List<Milestone> Milestones = new ArrayList<>();
+	private List<Invoice> Invoices = new ArrayList<>();
+	private List<Task> Tasks = new ArrayList<>();
+
+	public List<Task> getTasks() {
+		return Tasks;
+	}
+
+	public List<Invoice> getInvoices() {
+		return Invoices;
+	}
+
+	public List<Milestone> getMilestones() {
+		return Milestones;
+	}
+
+	public Project() {
+		addProject(this);
+	}
+
+	public void addMilestone(Milestone milestone) {
+		if (!Milestones.contains(milestone)) {
+			Milestones.add(milestone);
+			milestone.setProject(this);
+		}
+
+	}
+
+	public void addTask(Task task) {
+		if (!Tasks.contains(task)) {
+			Tasks.add(task);
+			task.setProject(this);
+		}
+	}
+
+	public void addInvoices(Invoice invoice) {
+		if (!Invoices.contains(invoice)) {
+			Invoices.add(invoice);
+			invoice.setProject(this);
+		}
+
+	}
+
+	public void setManager(Manager manager) {
+	    // Проверяем, если текущий менеджер не равен null
+	    if (this.manager != null) {
+	        // Убираем текущий проект из менеджера
+	        this.manager.removeProject(this);
+	    }
+	    
+	    // Назначаем нового менеджера
+	    this.manager = manager;
+	    
+	    // Если новый менеджер не null, добавляем проект к этому менеджеру
+	    if (manager != null) {
+	        manager.addProject(this);
+	        System.out.println("!=NULL");
+	    } else {
+	        System.out.println("==NULL");
+	    }
+	}
+
+
+	private static List<Project> extent = new ArrayList<>();
+
+	private static void addProject(Project Project) {
+		extent.add(Project);
+	}
+
+	private static void removeProject(Project Project) {
+		extent.remove(Project);
+	}
+
+}

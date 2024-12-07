@@ -1,0 +1,26 @@
+package Models;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Milestone {
+
+	private String description;
+	private LocalDate dateOfAchievement;
+	
+	public Milestone() {
+		addMilestone(this);
+	}
+
+	private static List<Milestone> extent = new ArrayList<>();
+
+	private static void addMilestone(Milestone Milestone) {
+		extent.add(Milestone);
+	}
+
+	private static void removeMilestone(Milestone Milestone) {
+		extent.remove(Milestone);
+	}
+
+}

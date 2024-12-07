@@ -1,0 +1,40 @@
+package Models;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Task {
+
+	private String name;
+	private String description;
+	private LocalDate StartDate;
+	private LocalDate EndDate;
+	//enum
+	private Project project;
+	
+	public Task() {
+		addTask(this);
+	}
+	
+	public void setProject(Project project) {
+		if(!project.getTasks().contains(this)) {
+			
+			this.project = project;
+			project.addTask(this);
+			
+		}
+		
+	}
+	
+	private static List<Task> extent = new ArrayList<>();
+
+	private static void addTask(Task Task) {
+		extent.add(Task);
+	}
+
+	private static void removeTask(Task Task) {
+		extent.remove(Task);
+	}
+
+}

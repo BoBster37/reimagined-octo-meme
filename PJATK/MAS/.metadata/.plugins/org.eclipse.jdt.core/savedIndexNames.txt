@@ -1,0 +1,13 @@
+INDEX VERSION 1.134+/home/bobster/PJATK/MAS/.metadata/.plugins/org.eclipse.jdt.core
+4186255446.index
+3127570480.index
+325385053.index
+2322297185.index
+369775674.index
+2421053791.index
+1865797976.index
+3532558114.index
+1360368419.index
+3126264045.index
+1291526760.index
+4090862237.index

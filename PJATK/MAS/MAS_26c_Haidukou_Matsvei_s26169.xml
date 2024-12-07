@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexing>
+ <paragraph index="10" node_type="writer">Matsvei Haidukou </paragraph>
+ <paragraph index="11" node_type="writer">s26169 </paragraph>
+ <paragraph index="12" node_type="writer">2024</paragraph>
+ <object alt="" name="Image1" object_type="graphic"/>
+ <object alt="" name="Image2" object_type="graphic"/>
+ <object alt="" name="Image4" object_type="graphic"/>
+ <object alt="" name="Image3" object_type="graphic"/>
+ <object alt="" name="Image5" object_type="graphic"/>
+ <object alt="" name="Image6" object_type="graphic"/>
+ <object alt="" name="Image7" object_type="graphic"/>
+ <object alt="" name="Image8" object_type="graphic"/>
+ <paragraph index="54" node_type="writer">Dokumentacja </paragraph>
+ <paragraph index="55" node_type="writer">Zarządzanie Projektami Budowlanymi</paragraph>
+ <paragraph index="57" node_type="writer">Modelowanie i Analiza Systemów</paragraph>
+ <paragraph index="58" node_type="writer">Informacyjnych (MAS)</paragraph>
+ <paragraph index="76" node_type="writer">Wymagania użytkownika</paragraph>
+ <paragraph index="77" node_type="writer">Aplikacja do zarządzania projektami budowlanymi jest narzędziem online zaprojektowanym z myślą o skutecznym zarządzaniu wszystkimi aspektami projektów budowlanych. Główne cele aplikacji to śledzenie postępów prac, zarządzanie zasobami oraz zapewnienie, że projekty są realizowane zgodnie z harmonogramem i budżetem. Aplikacja jest przeznaczona dla menedżerów projektów i wykonawców, którzy mają dostęp do różnych funkcji dostosowanych do ich ról.</paragraph>
+ <paragraph index="78" node_type="writer">Kluczowe funkcje aplikacji:</paragraph>
+ <paragraph index="79" node_type="writer">    Zarządzanie projektami</paragraph>
+ <paragraph index="80" node_type="writer">        Tworzenie i aktualizacja projektów: Menedżerowie projektów mogą tworzyć nowe projekty, ustawiać ich parametry, przypisywać zadania i monitorować postępy.</paragraph>
+ <paragraph index="81" node_type="writer">        Śledzenie statusu projektu: Możliwość monitorowania statusu projektu (np. &quot;Nowy&quot;, &quot;W toku&quot;, &quot;Wstrzymany&quot;, &quot;Zakończony&quot;, &quot;Anulowany&quot;) w czasie rzeczywistym.</paragraph>
+ <paragraph index="83" node_type="writer">    Zarządzanie zadaniami</paragraph>
+ <paragraph index="84" node_type="writer">        Tworzenie i przypisywanie zadań: Menedżerowie mogą tworzyć zadania, przypisywać je konkretnym wykonawcom oraz ustalać priorytety i terminy.</paragraph>
+ <paragraph index="85" node_type="writer">        Aktualizacja statusu zadań: Wykonawcy mogą aktualizować status swoich zadań (np. &quot;Nie rozpoczęto&quot;, &quot;W toku&quot;, &quot;Zakończone&quot;).</paragraph>
+ <paragraph index="87" node_type="writer">    Zarządzanie dokumentacją</paragraph>
+ <paragraph index="88" node_type="writer">        Zarządzanie raportami: Tworzenie i udostępnianie raportów dotyczących postępów prac, wydatków i innych aspektów projektu.</paragraph>
+ <paragraph index="90" node_type="writer">    Zarządzanie finansami</paragraph>
+ <paragraph index="91" node_type="writer">        Śledzenie budżetu i wydatków: Możliwość śledzenia budżetu projektu, rejestrowania wydatków i zarządzania fakturami.</paragraph>
+ <paragraph index="93" node_type="writer">    Zarządzanie zasobami </paragraph>
+ <paragraph index="94" node_type="writer">Zarządzanie materiałami: Możliwość dodawania, aktualizowania i śledzenia materiałów potrzebnych do realizacji projektu.</paragraph>
+ <paragraph index="97" node_type="writer">Diagram przypadków użycia</paragraph>
+ <paragraph index="99" node_type="writer">Diagram klas – analityczny</paragraph>
+ <paragraph index="101" node_type="writer">Diagram klas – projektowy</paragraph>
+ <paragraph index="103" node_type="writer">Scenariusz przypadku użycia</paragraph>
+ <paragraph index="104" node_type="writer">Przypadek użycia: </paragraph>
+ <paragraph index="105" node_type="writer">Edycja zadania</paragraph>
+ <paragraph index="106" node_type="writer">Warunek początkowy:
+Jest zapamiętany сo najmniej jeden projekt.</paragraph>
+ <paragraph index="107" node_type="writer">Główny przepływ zdarzeń:</paragraph>
+ <paragraph index="108" node_type="writer">Aktor Kierownik uruchamia przypadek użycia</paragraph>
+ <paragraph index="109" node_type="writer">System wyświetla listę projektów oraz prośi o wybraniu projekta. Aktor wybiera projekt.</paragraph>
+ <paragraph index="110" node_type="writer">System wyświetla listę zadań projektu oraz prośi o wybraniu zadania. Aktor wybiera zadanie.</paragraph>
+ <paragraph index="111" node_type="writer">System wyświetla szczegóły zadania. Aktor wybiera opcje edycji zadania.</paragraph>
+ <paragraph index="112" node_type="writer">System wyświetla formularz edycji zadania.</paragraph>
+ <paragraph index="113" node_type="writer">Aktor wypełnia formularz, podając nowe szczegóły zadania.</paragraph>
+ <paragraph index="114" node_type="writer">System wyświetla komunikat o poprawnej edycji.</paragraph>
+ <paragraph index="115" node_type="writer">Koniec przypadku użycia.</paragraph>
+ <paragraph index="116" node_type="writer">Alternatywny przepyw zdarzeń:</paragraph>
+ <paragraph index="117" node_type="writer">        4a. Brak zadań w wybranym projekcie. System informuje o tym i proponuje utworzenie nowego zadania. </paragraph>
+ <paragraph index="118" node_type="writer">	4aa. Aktor chce utworzyć nowe zadanie, system wywoluje przypadek użycia Tworżenie zadania. </paragraph>
+ <paragraph index="119" node_type="writer">	4ab. Aktor nie chce tworzyć nowych zadań. System przechodzi do punktu 8 </paragraph>
+ <paragraph index="120" node_type="writer">        7a.   Aktor nie napisał nic w jednym lub kilku polach formularza. System informuje o tym i proponuje dodać informacje w pustych polach.</paragraph>
+ <paragraph index="121" node_type="writer">	7aa.  Aktor chce dodać informacje. System przechodzi do punktu 5. </paragraph>
+ <paragraph index="122" node_type="writer">	7ab.  Aktor nie chce dodawać informacji. System przechodzi do punktu 8. </paragraph>
+ <paragraph index="123" node_type="writer">Diagram aktywności</paragraph>
+ <paragraph index="125" node_type="writer">Diagram stanu</paragraph>
+ <paragraph index="127" node_type="writer">Projekt GUI</paragraph>
+ <paragraph index="128" node_type="writer">Przypadek użycia – Tworzenie zadania</paragraph>
+ <paragraph index="130" node_type="writer">Projekt GUI</paragraph>
+ <object index="131" name="Table of Contents1" object_type="section"/>
+ <object index="132" name="Table of Contents1_Head" object_type="section"/>
+ <paragraph index="133" node_type="writer" parent_index="132">Omówienie decyzji projektowych i skutków analizy dynamicznej</paragraph>
+ <paragraph index="135" node_type="writer" parent_index="132">Omówienie decyzji projektowych:</paragraph>
+ <paragraph index="136" node_type="writer" parent_index="132">Użycie języka Java: Zdecydowałem się na język Java jako główny język programowania, ponieważ jest on powszechnie stosowany w tworzeniu systemów o dużej skali. Java ma silne wsparcie społeczności i dostępność wielu bibliotek i frameworków, co znacząco ułatwia rozwój i utrzymanie aplikacji.</paragraph>
+ <paragraph index="137" node_type="writer" parent_index="132">Wybór bazy danych: Wybrałem relacyjną bazę danych MySQL ze względu na jej niezawodność, skalowalność i wsparcie dla transakcji. MySQL jest również powszechnie stosowany w branży i łatwy w obsłudze, co czyni go idealnym rozwiązaniem dla naszego systemu.</paragraph>
+ <paragraph index="138" node_type="writer" parent_index="132">Zastosowanie wzorca MVC: Zdecydowałem się zastosować wzorzec MVC (Model-View-Controller) dla warstwy prezentacji. Pozwala to na oddzielenie logiki biznesowej od warstwy widoku oraz ułatwia rozwój i utrzymanie interfejsu użytkownika. Dzięki temu możemy wprowadzać zmiany w interfejsie bez wpływu na logikę biznesową i odwrotnie.</paragraph>
+ <paragraph index="139" node_type="writer" parent_index="132">Skutki analizy dynamicznej:</paragraph>
+ <paragraph index="140" node_type="writer" parent_index="132">Optymalizacja procesów: Analiza dynamiczna pozwoliła mi zidentyfikować krytyczne ścieżki i możliwe wąskie gardła w procesie zarządzania projektami budowlanymi. Dzięki temu mogłem wprowadzić optymalizacje w działaniach takich jak zarządzanie materiałami, harmonogramowanie zadań i alokacja zasobów. Te optymalizacje przyczyniły się do bardziej efektywnego zarządzania projektami i lepszego wykorzystania zasobów.</paragraph>
+ <paragraph index="141" node_type="writer" parent_index="132">Poprawa wydajności systemu: Identyfikacja często wykonywanych operacji i zrozumienie ich wpływu na wydajność systemu pozwoliła mi wprowadzić optymalizacje w kodzie źródłowym oraz w bazie danych. Dzięki temu osiągnąłem znaczną poprawę ogólnej wydajności systemu, co przełożyło się na szybsze i bardziej niezawodne działanie aplikacji.</paragraph>
+ <object index="146" name="Table of Contents2" object_type="section"/>
+ <object index="147" name="Table of Contents2_Head" object_type="section"/>
+ <paragraph index="148" node_type="writer" parent_index="147">Spis tresći</paragraph>
+ <paragraph index="150" node_type="writer" parent_index="146">Dokumentacja	1</paragraph>
+ <paragraph index="151" node_type="writer" parent_index="146">Zarządzanie Projektami Budowlanymi	1</paragraph>
+ <paragraph index="152" node_type="writer" parent_index="146">Wymagania użytkownika	2</paragraph>
+ <paragraph index="153" node_type="writer" parent_index="146">Diagram przypadków użycia	3</paragraph>
+ <paragraph index="154" node_type="writer" parent_index="146">Diagram klas – analityczny	4</paragraph>
+ <paragraph index="155" node_type="writer" parent_index="146">Diagram klas – projektowy	5</paragraph>
+ <paragraph index="156" node_type="writer" parent_index="146">Scenariusz przypadku użycia	6</paragraph>
+ <paragraph index="157" node_type="writer" parent_index="146">Diagram aktywności	7</paragraph>
+ <paragraph index="158" node_type="writer" parent_index="146">Diagram stanu	8</paragraph>
+ <paragraph index="159" node_type="writer" parent_index="146">Projekt GUI	9</paragraph>
+ <paragraph index="160" node_type="writer" parent_index="146">Projekt GUI	10</paragraph>
+ <paragraph index="161" node_type="writer" parent_index="146">Omówienie decyzji projektowych i skutków analizy dynamicznej	11</paragraph>
+</indexing>

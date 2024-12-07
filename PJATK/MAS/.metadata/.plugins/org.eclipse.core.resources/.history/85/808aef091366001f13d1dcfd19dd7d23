@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectsController">
+    <!-- Верхняя часть с заголовком -->
+    <top>
+        <Text styleClass="header" text="Projects" style="-fx-font-size: 24px; -fx-padding: 20px;" />
+    </top>
+    
+    <!-- Центральная часть с содержимым -->
+    <center>
+        <VBox spacing="15.0" alignment="CENTER" style="-fx-padding: 20px;">
+            <ListView fx:id="projectsListView" prefHeight="600.0" prefWidth="800.0"/>
+            <Button onAction="#handleViewTasksButtonAction" text="View Tasks" />
+        </VBox>
+    </center>
+</BorderPane>

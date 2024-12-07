@@ -1,0 +1,24 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Client {
+
+	private int clientId;
+	
+	public Client() {
+		addClient(this);
+	}
+
+	private static List<Client> extent = new ArrayList<>();
+
+	private static void addClient(Client Client) {
+		extent.add(Client);
+	}
+
+	private static void removeClient(Client Client) {
+		extent.remove(Client);
+	}
+
+}

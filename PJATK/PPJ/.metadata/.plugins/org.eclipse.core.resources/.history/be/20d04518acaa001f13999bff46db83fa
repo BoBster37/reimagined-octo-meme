@@ -1,0 +1,40 @@
+import java.util.Random;
+
+public class s26169 {
+    public static void main(String[] args) {
+        int[][] macierz = new int[8][8];
+        Random random = new Random();
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                macierz[i][j] = random.nextInt(11);
+            }
+        }
+
+        int[] licznik = new int[11];
+        for (int i = 0; i < 8; i++) {
+            licznik[macierz[i][i]]++;
+            licznik[macierz[i][7 - i]]++;
+        }
+
+        boolean znaleziono = false;
+        for (int i = 0; i < licznik.length; i++) {
+            if (licznik[i] >= 3) {
+                znaleziono = true;
+                System.out.println("Liczba " + i + " występuje co najmniej 3 razy na przekątnych.");
+            }
+        }
+
+        if (!znaleziono) {
+            System.out.println("Na przekątnych nie ma liczby, która występuje co najmniej 3 razy.");
+        }
+
+        System.out.println("\nWygenerowana macierz:");
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(macierz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}

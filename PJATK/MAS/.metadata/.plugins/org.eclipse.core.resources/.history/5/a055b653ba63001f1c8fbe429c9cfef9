@@ -1,0 +1,31 @@
+package Models;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Comment {
+
+	private String content;
+	private LocalDate date;
+	private Task task;
+	
+	public Comment() {
+		addComment(this);
+	}
+	
+	public void setTask(Task task) {
+		
+	}
+
+	private static List<Comment> extent = new ArrayList<>();
+
+	private static void addComment(Comment Comment) {
+		extent.add(Comment);
+	}
+
+	private static void removeComment(Comment Comment) {
+		extent.remove(Comment);
+	}
+
+}

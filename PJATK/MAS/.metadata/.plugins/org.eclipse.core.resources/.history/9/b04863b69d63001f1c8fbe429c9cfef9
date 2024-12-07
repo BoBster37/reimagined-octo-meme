@@ -1,0 +1,33 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Manager {
+
+	private List<Project> Projects = new ArrayList<>();
+
+	public void addProject(Project newProject) {
+		// Check if we already have the info
+		if (!Projects.contains(newProject)) {
+			Projects.add(newProject);
+			// Add the reverse connection
+			newProject.setManager(this);
+		}
+	}
+
+	public Manager() {
+		addManager(this);
+	}
+
+	private static List<Manager> extent = new ArrayList<>();
+
+	private static void addManager(Manager Manager) {
+		extent.add(Manager);
+	}
+
+	private static void removeManager(Manager Manager) {
+		extent.remove(Manager);
+	}
+
+}

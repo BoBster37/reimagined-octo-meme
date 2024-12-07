@@ -1,0 +1,36 @@
+package Models;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Invoice {
+
+	private int invoiceId;
+	private int amount;
+	private LocalDateTime dateOfIssue;
+	private LocalDateTime dateOfPayment;
+	private Project project;
+	
+	public Invoice() {
+		addInvoice(this);
+	}
+	
+	private void setProject(Project project) {
+		if(!project.getInvoices().contains(this)) {
+			this.project = project;
+			project.addInvoices();
+		}
+	}
+
+	private static List<Invoice> extent = new ArrayList<>();
+
+	private static void addInvoice(Invoice Invoice) {
+		extent.add(Invoice);
+	}
+
+	private static void removeInvoice(Invoice Invoice) {
+		extent.remove(Invoice);
+	}
+
+}

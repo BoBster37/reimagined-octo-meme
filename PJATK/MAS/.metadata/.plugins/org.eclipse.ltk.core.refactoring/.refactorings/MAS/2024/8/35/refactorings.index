@@ -1,0 +1,28 @@
+1724851664604	Delete element
+1724851745479	Delete element
+1724852030789	Delete element
+1724853770740	Delete element
+1724875849610	Rename resource 'Main.fxml'
+1724876145619	Move file
+1724876365419	Delete element
+1724876378024	Move file
+1724876386412	Rename resource 'application.css'
+1724876622784	Move file
+1724876635804	Move file
+1724876690633	Move file
+1724876808100	Copy file
+1724876816719	Rename resource 'Login2.fxml'
+1724876984286	Copy file
+1724877014659	Rename resource 'Projects2.fxml'
+1724929835930	Encapsulate field 'name, ...'
+1725025569113	Encapsulate field 'invoiceId, ...'
+1725025575450	Encapsulate field 'amount, ...'
+1725025579889	Encapsulate field 'dateOfIssue, ...'
+1725025584107	Encapsulate field 'dateOfPayment, ...'
+1725025596187	Encapsulate field 'materialId, ...'
+1725025600028	Encapsulate field 'cost, ...'
+1725025609412	Encapsulate field 'description, ...'
+1725025613104	Encapsulate field 'dateOfAchievement, ...'
+1725025645578	Encapsulate field 'projectId, ...'
+1725025650339	Encapsulate field 'budget, ...'
+1725025653793	Encapsulate field 'location, ...'

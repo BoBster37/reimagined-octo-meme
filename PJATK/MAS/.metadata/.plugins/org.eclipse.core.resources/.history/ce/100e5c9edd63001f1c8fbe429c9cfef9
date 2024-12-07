@@ -1,0 +1,38 @@
+package Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Contractor extends Person {
+	
+	private List<Comment> Comments = new ArrayList<>();
+	
+	public List<Comment> getComments() {
+		return Comments;
+	}
+
+	public void addComment(Comment comment) {
+	    if (!Comments.contains(comment)) {  
+	        Comments.add(comment);
+	        
+	        if (comment.getContractor() != this) {  
+	            comment.setContractor(this);  
+	        }
+	    }
+	}
+
+	public Contractor() {
+		addContractor(this);
+	}
+
+	private static List<Contractor> extent = new ArrayList<>();
+
+	private static void addContractor(Contractor Contractor) {
+		extent.add(Contractor);
+	}
+
+	private static void removeContractor(Contractor Contractor) {
+		extent.remove(Contractor);
+	}
+
+}
