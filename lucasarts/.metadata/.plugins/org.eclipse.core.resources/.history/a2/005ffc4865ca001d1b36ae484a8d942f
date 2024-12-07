@@ -1,0 +1,49 @@
+package zad1;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class GUI_TPO2 extends JFrame{
+    private JPanel MyPanel;
+    private JButton button1;
+    private JTextField Country;
+    private JTextField City;
+    private JTextField Rate;
+    private JLabel WeatherLabel;
+    private JLabel RateLabel;
+    private JLabel NBPLabel;
+    private JButton CountryButton;
+
+    String country;
+
+    public GUI_TPO2(){
+
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.add(MyPanel);
+        this.setSize(600,600);
+
+        CountryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                country = Country.getText();
+            }
+        });
+
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              Service s = new Service(country);
+              WeatherLabel.setText(s.getWeather(City.getText()));
+              NBPLabel.setText((s.getNBPRate()).toString());
+              RateLabel.setText((s.getRateFor(Rate.getText())).toString());
+
+            }
+        });
+
+
+    }
+
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.132+/home/bobster/lucasarts/.metadata/.plugins/org.eclipse.jdt.core
+2245001677.index
+1865797976.index
+2868618222.index
+3378249220.index

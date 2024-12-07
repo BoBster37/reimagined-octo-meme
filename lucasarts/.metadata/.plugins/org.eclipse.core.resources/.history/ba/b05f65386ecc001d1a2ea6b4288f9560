@@ -1,0 +1,113 @@
+package nai_1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+public class Main {
+	
+	 public static void main(String[] args) {
+		    
+	
+		 List<List<String>> train = getArray("iris.data");
+		 List<List<String>> test = getArray("iris.test.data");
+		 Scanner scanner = new Scanner(System.in);
+		
+		 while(true) {
+			 System.out.println("[1] run the program with pre-files\n[2] check a specific vector\n[3] close");
+			String choice = scanner.nextLine();
+			 if(choice.equals("1")) {
+				 check(8, train, test, 1);
+				 break;
+			 }else if(choice.equals("2")) {
+				 while(true) {
+				 System.out.println("write list of doubles\n");
+				 String vec = scanner.nextLine();
+				 List<String> list = Arrays.asList(vec.split(" "));
+				 if (list.size()  < train.size()) {
+					 int comp = train.size() - list.size();
+					 for (int x = 0; x < comp; x ++) {
+						 list.add("0");
+					 } 
+				 }
+				 List<List<String>> rs = new ArrayList<List<String>>();
+				 rs.add(list);
+				
+				 check(4, train, rs,2);
+				 break;
+			 }}else if(choice.equals("3")) {
+				 System.exit(0);
+			 }
+			 
+		 }
+		 
+		  }
+	 
+	 public static List<List<String>> getArray(String path){
+		 List<List<String>> resultArray = new ArrayList<List<String>>();
+		 try {
+		      File myObj = new File(path);
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        
+				List<String> list = Arrays.asList(data.split(","));
+		        resultArray.add(list);
+		      }
+		      myReader.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		 return resultArray;
+	 }
+	 
+	 public static void check(int k, List<List<String>> train, List<List<String>> test, int mode) {
+		 int correct = 0;
+		 int wrong = 0;
+		 for (int i = 0; i < test.size(); i ++) {
+			 TreeMap<Double,String> map = new TreeMap<Double,String>();
+			 for (int j = 0; j < train.size(); j++ ) {
+				 double res = 0;
+				 for (int x = 0; x < 4; x++) {	 
+					 res = res + Math.pow(Double.parseDouble(train.get(j).get(x)) - Double.parseDouble(test.get(i).get(x)), 2);
+				 }
+				 res = Math.sqrt(res);
+				 map.put(res, train.get(j).get(4));}
+			 int kk = 0;
+			 TreeMap<String, Double> tree = new TreeMap<String,Double>();
+			 for (Map.Entry<Double, String> entry : map.entrySet()) {
+				 if(kk >= k) {break;}
+				 	if (tree.containsKey(entry.getValue())) {
+				 		tree.put(entry.getValue(), tree.get(entry.getValue() + 1));
+				 	}else {
+				 		tree.put(entry.getValue(), 0.0);
+				 	}
+				    kk++;
+			 }
+			 if (mode == 2) {
+				 System.out.println(tree.lastKey());
+			 }
+			 if(mode == 1) {
+			 if( test.get(i).get(4).equals(tree.lastKey())) {
+				 correct ++;
+			 }else {
+				 wrong++;
+			 }}
+		 }
+		 if (mode == 1) {
+		 double accuracy = (100.0/test.size())*correct;
+		 System.out.println("[accuracy]: " + accuracy + "%");
+		 }
+	 }
+	
+}
+
+
+
+
+

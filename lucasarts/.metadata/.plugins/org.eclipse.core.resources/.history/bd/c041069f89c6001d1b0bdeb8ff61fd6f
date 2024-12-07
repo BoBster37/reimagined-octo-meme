@@ -1,0 +1,5 @@
+package nai_1;
+
+public class Pair<T1, T2> {
+
+}
