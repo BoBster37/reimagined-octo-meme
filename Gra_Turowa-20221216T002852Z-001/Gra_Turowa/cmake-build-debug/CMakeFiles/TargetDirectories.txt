@@ -1,0 +1,3 @@
+/home/bobster/CLionProjects/Gra_Turowa/cmake-build-debug/CMakeFiles/Gra_Turowa.dir
+/home/bobster/CLionProjects/Gra_Turowa/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/bobster/CLionProjects/Gra_Turowa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
