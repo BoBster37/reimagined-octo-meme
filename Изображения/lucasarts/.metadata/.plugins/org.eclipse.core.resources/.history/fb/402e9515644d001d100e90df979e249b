@@ -1,0 +1,89 @@
+package Classes;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class CountryTable extends JTable {
+	
+	
+	
+	
+	
+	public CountryTable(String countriesFileName)  {
+	
+	}
+
+	public JTable create() {
+		return null;
+	}
+	
+	public static void main(String[] arqs) {
+		 	String[][] tableData = new String[3][3];
+			String[] columnNames = new String[3];
+			File filename = new File("data/countries.txt");
+			FileReader reader;
+			try {
+				reader = new FileReader(filename);
+				int data = 0;
+				while(data != -1) {
+					
+						String column = "";
+							while(data != '\t') {
+							data = reader.read();
+							column += (char)data;
+							}
+						System.out.print(column );
+	
+				}
+				
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			
+			try {
+				Scanner scan = new Scanner(filename);
+				if(scan.hasNextLine()) {
+					
+					for(int i = 0; i<=2; i++) {
+					columnNames[i]=scan.next();
+					//System.out.println(columnNames[i]);
+					
+					} 
+					String pattern = "[a-zA-Z]+";
+					String pattern2 = "[0-9]+";
+					String pattern3 = "\n";
+			        while ((scan.hasNextLine())) {
+						
+						  if(scan.hasNext(pattern) || scan.next().contains("\t") ||
+						  scan.hasNext(pattern2) ) { System.out.print(scan.nextLine() + "\n"); }
+						 
+			        	scan.useDelimiter("\t");
+			        
+			        }
+			        
+				}
+			
+				JTable table = new JTable(tableData,columnNames);
+				JScrollPane scrollpane = new JScrollPane(table);
+				
+				JFrame frame = new JFrame();
+				frame.setVisible(true);
+				frame.setSize(600,300);
+				frame.add(scrollpane);
+				frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		
+		 
+	}}

@@ -1,0 +1,39 @@
+/**
+ *
+ *  @author Haidukou Matsvei S26169
+ *
+ */
+
+package zad1;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+public class Main {
+	static volatile int w = 0;
+  public static void main(String[] args) throws IOException {
+	  
+	  File file = new File("../Towary.txt");
+	  Helper help = new Helper();
+	 TowarCreator threadA = new TowarCreator(help,file);
+	 WagaCounter threadB = new WagaCounter(help);
+	
+	 //Thread threadA  = new Thread(() -> {});
+	 
+	// Thread threadB = new Thread(()->{});
+	 
+	 threadA.start();
+	 threadB.start(); 
+  }
+}

@@ -1,0 +1,80 @@
+/**
+ *
+ *  @author Haidukou Matsvei S26169
+ *
+ */
+
+package zad1;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+public class Main {
+	static volatile int w = 0;
+	volatile static List<Towar> syncList = Collections.synchronizedList(new ArrayList<>());
+	static volatile boolean thread =  true;;
+  public static void main(String[] args) {
+	  
+	  File file = new File("../Towary.txt");
+	 
+	 Thread threadA = new Thread(() -> {
+		
+		  try {
+			  
+			BufferedReader br = new BufferedReader(new FileReader("../Towary.txt"));
+			String line;
+				int i =0;
+				while((line = br.readLine()) != null) {
+					
+					String[] str = line.split(" ");
+				
+					 int id = Integer.parseInt(str[0]);
+					 int waga = Integer.parseInt(str[1]);
+					w = waga;
+					 Towar tw = new Towar(id,waga);
+					 syncList.add(tw);
+					i++;
+					if(i % 200 == 0) {
+						System.out.println("utworzono " + i + " obiektów");
+					}
+					
+				}
+			thread = false;
+		  } catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+	 });
+	 
+	 Thread threadB = new Thread(()->{
+		  int wagaCount = 0;
+		while(thread) {
+			 for(int i = 0 ; i < syncList.size(); i++) {
+				 wagaCount += syncList.get(i).waga;
+				 if(i % 100 == 0) {
+					 System.out.println("objekty - " + i);
+				 }
+			 }
+			
+		}
+	 
+	 });
+	 
+	 threadA.start();
+	 threadB.start(); 
+  }
+}

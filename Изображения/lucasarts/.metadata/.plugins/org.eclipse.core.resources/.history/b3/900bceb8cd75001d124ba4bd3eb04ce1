@@ -1,0 +1,43 @@
+package zad1;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TowarCreate extends Thread{
+
+	@Override
+	public void run() {
+		  
+		  try {
+			  
+			BufferedReader br = new BufferedReader(new FileReader("../Towary.txt"));
+			String line;
+				int i =0;
+				while((line = br.readLine()) != null) {
+					String[] str = line.split(" ");
+				
+					int id = Integer.parseInt(str[0]);
+					int waga = Integer.parseInt(str[1]);
+					
+					 Towar tw = new Towar(id,waga);
+					i++;
+					if(i % 200 == 0) {
+						System.out.println("utworzono " + i + " obiektów");
+					}
+					
+				}
+			
+		  } catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+package zad1;
+
+import java.io.IOException;
+
+public class WagaCounter extends Thread{
+	private Helper help;
+
+
+    public WagaCounter(Helper h) {
+        help = h;
+
+    }
+
+    public void run() {
+    	  int value = 0;
+		  int wagaCount = 0;
+		  int i = 0;
+		while(help.get() != 0) {
+			value = help.get();
+			wagaCount += value;
+			i++;
+			if(i %100 == 0) {
+			System.out.println("policzono wage " + i + " towarow");
+			}
+		}
+		 
+            
+           
+        
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring clone="true" comment="Infer generic type arguments on &apos;UTP3_HM_S26169&apos;&#x0A;- Original project: &apos;UTP3_HM_S26169&apos;&#x0A;- Original elements:&#x0A;     zad1.Main.java&#x0A;- Assume clone() returns an instance of the receiver type&#x0A;- Leave unconstrained type arguments raw" description="Infer generic type arguments" element1="/src&lt;zad1{Main.java" flags="6" id="org.eclipse.jdt.ui.infer.typearguments" leave="true" stamp="1666978120074" version="1.0"/>
+</session>

@@ -1,0 +1,30 @@
+package zad1;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Towar {
+	
+	volatile int id, waga;
+	
+	public Towar(int id, int waga) {
+		this.id = id;
+		this.waga = waga;
+	}
+	
+	
+	
+	
+	public class WagaCounter extends Thread{
+		
+		@Override
+		public void run() {
+			int i = 0;
+			i += waga;
+		}
+
+	}
+	
+}

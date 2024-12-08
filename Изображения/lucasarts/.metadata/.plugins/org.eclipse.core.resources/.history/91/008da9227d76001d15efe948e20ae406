@@ -1,0 +1,36 @@
+package zad1;
+
+import java.io.IOException;
+
+public class WagaCounter extends Thread{
+	private Helper help;
+    private int number;
+
+    public WagaCounter(Helper h, int number) {
+        help = h;
+        this.number = number;
+    }
+
+    public void run() {
+    	  int value = 0;
+		  int wagaCount = 0;
+		  int i = 0;
+		try {
+			while(true) {
+				value = help.get();
+				i++;
+				if(i %100 == 0) {
+				System.out.println(in.read() + " - " + i);
+				}
+			}
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+            
+           
+        
+    }
+}

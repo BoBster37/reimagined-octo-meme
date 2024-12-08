@@ -1,0 +1,22 @@
+package zad1;
+
+public class TowarCreater extends Thread{
+	private Helper help;
+    private int number;
+
+    public TowarCreater(Helper h, int number) {
+        help = h;
+        this.number = number;
+    }
+
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            help.put(i);
+            System.out.println("Producer #" + this.number
+                               + " put: " + i);
+            try {
+                sleep((int)(Math.random() * 100));
+            } catch (InterruptedException e) { }
+        }
+    }
+}

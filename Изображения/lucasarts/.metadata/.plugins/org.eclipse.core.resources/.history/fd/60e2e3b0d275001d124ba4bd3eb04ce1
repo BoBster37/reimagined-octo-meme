@@ -1,0 +1,11 @@
+package zad1;
+
+public class WagaCounter extends Thread{
+	
+	@Override
+	public void run() {
+		int i = 0;
+	
+	}
+
+}

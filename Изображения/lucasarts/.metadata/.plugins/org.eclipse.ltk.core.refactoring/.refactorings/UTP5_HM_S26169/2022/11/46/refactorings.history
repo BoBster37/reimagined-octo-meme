@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;UTP5_HM_S26169/allWords.txt&apos; to &apos;allwords.txt&apos;" description="Rename resource &apos;allWords.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="allWords.txt" name="allwords.txt" stamp="1668894853965" updateReferences="true"/>
+</session>

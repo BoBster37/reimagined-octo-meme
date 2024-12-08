@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;UTP4_HM_S26169/src/zad1/Untitled 1a&apos; to &apos;LamComFile&apos;" description="Rename resource &apos;Untitled 1a&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/zad1/Untitled 1a" name="LamComFile" stamp="1668099672393" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;UTP4_HM_S26169/src/zad1/LamComFile&apos; to &apos;LamComFile.txt&apos;" description="Rename resource &apos;LamComFile&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/zad1/LamComFile" name="LamComFile.txt" stamp="1668099688095" updateReferences="true"/>
+</session>
